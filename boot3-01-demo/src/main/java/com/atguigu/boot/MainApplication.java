@@ -1,7 +1,11 @@
 package com.atguigu.boot;
 
 import org.springframework.boot.SpringApplication;
+import org.springframework.boot.SpringBootConfiguration;
+import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.ConfigurableApplicationContext;
+import org.springframework.context.annotation.ComponentScan;
 
 /**
  * ClassName: MainApplication
@@ -13,10 +17,26 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  * @Version 1.0
  */
 
+// 主程序: com.atguigu.boot
+// com.atguigu.boot.controller
+// @SpringBootApplication(scanBasePackages = "com.atguigu")
+//@SpringBootConfiguration
+//@EnableAutoConfiguration
+//@ComponentScan("com.atguigu")
 @SpringBootApplication
 public class MainApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(MainApplication.class, args);
+        // Java10: 局部变量类型的自动推断
+        var ioc = SpringApplication.run(MainApplication.class, args);
+
+        // 1. 获取容器中所有组件的名字
+        String[] names = ioc.getBeanDefinitionNames();
+
+        // 2. 挨个遍历: dispatcherServlet、beanNameResolver、characterEncodingFilter、multipartResolver
+        // SpringBoot把以前配置的核心组件现在都给我们自动给配置好了
+        for (String name : names) {
+            System.out.println(name);
+        }
     }
 }
