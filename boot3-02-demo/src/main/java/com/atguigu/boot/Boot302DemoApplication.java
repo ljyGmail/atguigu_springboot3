@@ -1,8 +1,6 @@
 package com.atguigu.boot;
 
-import com.atguigu.boot.bean.Cat;
-import com.atguigu.boot.bean.Dog;
-import com.atguigu.boot.bean.User;
+import com.atguigu.boot.bean.*;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
@@ -36,5 +34,11 @@ public class Boot302DemoApplication {
         for (String s : ioc.getBeanNamesForType(User.class)) {
             System.out.println("user: " + s);
         }
+
+        Pig pig = ioc.getBean(Pig.class);
+        System.out.println("pig: " + pig);
+
+        Sheep sheep = ioc.getBean(Sheep.class);
+        System.out.println("sheep: " + sheep);
     }
 }
