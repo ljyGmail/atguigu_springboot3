@@ -11,7 +11,7 @@ package com.atguigu.boot.bean;
  */
 
 //@Component
-public class Cat {
+public class Dog {
     private Long id;
     private String name;
 

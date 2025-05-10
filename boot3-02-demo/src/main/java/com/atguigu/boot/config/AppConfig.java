@@ -1,12 +1,8 @@
 package com.atguigu.boot.config;
 
-import com.alibaba.druid.FastsqlException;
 import com.atguigu.boot.bean.User;
 import org.springframework.boot.SpringBootConfiguration;
-import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.Configuration;
-import org.springframework.context.annotation.Import;
 import org.springframework.context.annotation.Scope;
 
 /**
@@ -18,7 +14,7 @@ import org.springframework.context.annotation.Scope;
  * @Create: 2025. 5. 10. 오전 10:58
  * @Version 1.0
  */
-@Import(FastsqlException.class) // 给容器中放指定类型的组件，组件的名字默认是全类名
+//@Import(FastsqlException.class) // 给容器中放指定类型的组件，组件的名字默认是全类名
 @SpringBootConfiguration // 这是一个配置类，替代以前的配置文件。配置类本身也是容器中的组件
 // @Configuration
 public class AppConfig {
