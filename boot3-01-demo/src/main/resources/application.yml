@@ -2,6 +2,7 @@
 # 2. 属性有层级关系，使用下一行，空两格空格
 # 3. 左侧对齐的代表同一层级的属性
 
+---
 server:
   port: 9999
 
@@ -16,19 +17,28 @@ spring:
   datasource:
     url: aaa
 
+---
 person:
-  name: 张三
+  name: '张三\n123'
   age: 18
   birthday: 2010/10/10 12:12:12
   like: true
   child:
-    name: 李四
+    name: "李四\n123"
     age: 20
     birthday: 2018/10/10
 #    text: ["abc", "def"]
     text:
       - abc
       - def
+      - |
+        aaaaa
+        bbbbb
+        ccccc
+      - >
+        aaaaa
+        bbbbb
+        ccccc
   dogs:
     - name: 小黑
       age: 3
